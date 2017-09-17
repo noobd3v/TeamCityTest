@@ -1,6 +1,0 @@
-D:\nagp\devops\teamcitytest\UnitTest\bin\Debug\UnitTest.dll
-D:\nagp\devops\teamcitytest\UnitTest\bin\Debug\UnitTest.pdb
-D:\nagp\devops\teamcitytest\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\nagp\devops\teamcitytest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
-D:\nagp\devops\teamcitytest\UnitTest\obj\Debug\UnitTest.dll
-D:\nagp\devops\teamcitytest\UnitTest\obj\Debug\UnitTest.pdb
