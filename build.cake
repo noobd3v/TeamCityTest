@@ -27,7 +27,7 @@ Task("Build")
 });
 
 Task("Generate-Artifacts")
-	.IsDependentOn("Genrate-Coverage")
+	.IsDependentOn("Coverage-Report")
 	.Does(() =>
 	{
 		MSBuild("./TeamCityTest/TeamCityTest.csproj", new MSBuildSettings()
