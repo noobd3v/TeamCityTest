@@ -1,3 +1,5 @@
+#tool "nuget:?package=OpenCover"
+
 var target = Argument("target", "Clean");
 
 Task("Default")
@@ -25,7 +27,7 @@ Task("Build")
 });
 
 Task("Generate-Artifacts")
-	.IsDependentOn("msTest")
+	.IsDependentOn("Genrate-Coverage")
 	.Does(() =>
 	{
 		MSBuild("./TeamCityTest/TeamCityTest.csproj", new MSBuildSettings()
@@ -42,4 +44,16 @@ Task("msTest")
   MSTest("./UnitTest/bin/Debug/UnitTest.dll");
 });
 
+Task("Coverage-Report")
+	.IsDependentOn("msTest")
+		.Does(() =>
+		{
+			OpenCover(tool => {
+			  tool.MSTest("./UnitTest/bin/Debug/UnitTest.dll");
+			  },
+			  new FilePath("./coverage.xml"),
+			  new OpenCoverSettings()
+				.WithFilter("+[App]*")
+				.WithFilter("-[App.Tests]*"));
+		});
 RunTarget(target);
