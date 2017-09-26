@@ -53,7 +53,6 @@ Task("Coverage-Report")
 			  },
 			  new FilePath("./coverage.xml"),
 			  new OpenCoverSettings()
-				.WithFilter("+[App]*")
-				.WithFilter("-[App.Tests]*"));
+				.WithFilter("+[TeamCityTest]*"));
 		});
 RunTarget(target);
